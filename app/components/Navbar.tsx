@@ -24,10 +24,10 @@ export default function Navbar() {
             <Link href="/about" className="text-gray-700 hover:text-black">
               About
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-black">
+            <Link href="/srv" className="text-gray-700 hover:text-black">
               Services
             </Link>
-             <Link href="/blog" className="text-gray-700 hover:text-black">
+             <Link href="/blogs" className="text-gray-700 hover:text-black">
              Blog
             </Link>
              <Link href="/portfolio" className="text-gray-700 hover:text-black">
@@ -56,12 +56,18 @@ export default function Navbar() {
           <Link href="/about" className="block py-2 text-gray-700 hover:text-black">
             About
           </Link>
-          <Link href="/services" className="block py-2 text-gray-700 hover:text-black">
+          <Link href="/srv" className="block py-2 text-gray-700 hover:text-black">
             Services
           </Link>
           <Link href="/contact" className="block py-2 text-gray-700 hover:text-black">
             Contact
           </Link>
+           <Link href="/blogs" className="text-gray-700 hover:text-black">
+             Blog
+            </Link>
+             <Link href="/portfolio" className="text-gray-700 hover:text-black">
+              Portfolio
+            </Link>
         </div>
       )}
     </nav>

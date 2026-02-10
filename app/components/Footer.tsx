@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa6";
 function Footer() {
   return (
     <footer className="bg-slate-900 text-white border-t border-slate-800">
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 py-10">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-slate-200 to-white bg-clip-text text-transparent mb-4">

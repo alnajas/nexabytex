@@ -32,6 +32,9 @@ export default function RootLayout({
         <Navbar/>
         {children}
         <Footer/>
+        <script>
+  AOS.init();
+</script>
       </body>
     </html>
   );
