@@ -50,7 +50,7 @@ function Footer() {
 
         
           <div>
-            <h4 className="text-lg font-semibold text-slate-200 mb-6">Stay Updated</h4>
+            <h4 className="text-lg font-semibold text-slate-200 mb-4">Stay Updated</h4>
             <p className="text-slate-400 mb-4 text-sm">Get the latest updates and offers</p>
             <div className="flex flex-col sm:flex-row gap-2">
               <input

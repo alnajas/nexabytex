@@ -5,13 +5,35 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 function page() {
- 
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+useEffect(()=>{
+    sectionsRef.current.forEach((section) => {
+        if (!section) return;
+
+        gsap.fromTo(
+          section,
+          { opacity: 0, y: 80 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 60%",
+            },
+          }
+        );
+      });
+},[])
   return (
-    <div className="min-h-screen bg-white font-sans px-4 py-20">
+    <div className="min-h-screen bg-white font-sans px-4 py-15 grid grid-cols-2">
     
-      <section className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto mb-24">
-        <div className="bg-slate-50/80 backdrop-blur-sm  rounded-3xl p-12 md:p-20 max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8 leading-tight">
+      <section 
+      ref={(el) => { (sectionsRef.current[0] = el) }}
+      className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto mb-24">
+        <div className="bg-white backdrop-blur-sm  rounded-3xl p-12 md:p-20 max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-semibold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8  tracking-tight">
             Get In Touch
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed">

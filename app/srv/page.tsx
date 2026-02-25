@@ -1,10 +1,13 @@
 "use client";
+
 import React from 'react'
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import * as THREE from 'three';
 gsap.registerPlugin(ScrollTrigger);
 function page() {
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
   const services = [
     {
         id:1,
@@ -49,13 +52,34 @@ function page() {
       features: ['Code Review', 'Performance Audit', 'Migration Services', 'Ongoing Support']
     }
   ]
+ useEffect(()=>{
+  sectionsRef.current.forEach((section) => {
+        if (!section) return;
 
+        gsap.fromTo(
+          section,
+          { opacity: 0, y: 80 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 60%",
+            },
+          }
+        );
+      });
+ },[])
   return (
     <div className="min-h-screen bg-white font-sans px-4 py-20">
     
-      <section className="max-w-6xl mx-auto mb-24">
+      <section
+      ref={(el) => { (sectionsRef.current[0] = el) }}
+      className="max-w-6xl mx-auto mb-24">
         <div className="text-center mb-24">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-semibold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8 tracking-tight">
             Our Services
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">

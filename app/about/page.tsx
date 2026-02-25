@@ -11,7 +11,7 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      /* SECTION FADE / SLIDE */
+
       sectionsRef.current.forEach((section) => {
         if (!section) return;
 
@@ -43,7 +43,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans px-4 py-20">
+    <div className="min-h-screen bg-white font-sans px-4 py-20 antialised">
      
       <section
         ref={(el) => {
@@ -51,18 +51,17 @@ export default function About() {
         }}
         className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto mb-24"
       >
-        <div className="bg-slate-50/80 backdrop-blur-sm rounded-3xl p-12 md:p-20 max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8">
+        <div className="bg-white backdrop-blur-sm  p-12 md:p-20 max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-semibold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8 tracking-tight">
             About Our Company
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 leading-relaxed">
-            We build thoughtful digital products that balance performance,
-            aesthetics, and scalability.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, voluptatibus. Explicabo, fugit nulla. Rerum suscipit voluptatum eligendi odio modi error commodi exercitationem ex eaque assumenda placeat architecto, est, magnam perferendis.
           </p>
         </div>
       </section>
 
-      {/* STORY */}
+      
       <section
         ref={(el) => {
           sectionsRef.current[1] = el;
@@ -71,16 +70,15 @@ export default function About() {
       >
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl font-semibold text-slate-900 mb-6">
               Our Story
             </h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              What started as curiosity turned into a mission to craft
-              high-quality digital experiences.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur ipsa, nam aliquid consectetur facere, libero atque ut incidunt nis
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              We believe great software should feel effortless to use and
-              powerful under the hood.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur ipsa, nam aliquid consectetur facere, libero atque ut incidunt nis
+
             </p>
           </div>
 
@@ -95,12 +93,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* STATS */}
+      
       <section
         ref={(el) => {
           sectionsRef.current[2] = el;
         }}
-        className="bg-slate-50 py-20"
+        className="bg-white py-20"
       >
         <div className="max-w-4xl mx-auto text-center px-8">
           <div className="grid md:grid-cols-3 gap-10">

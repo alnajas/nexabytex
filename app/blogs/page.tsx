@@ -58,7 +58,7 @@ export default function Page() {
 
     const el = trackRef.current;
 
-    // Pause on hover
+
     el.addEventListener("mouseenter", () => tween.pause());
     el.addEventListener("mouseleave", () => tween.resume());
 
@@ -68,20 +68,50 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans px-4 py-20">
+    <div className="min-h-screen bg-white font-sans px-4 py-20 antialised">
   
-      <section className="max-w-6xl mx-auto mb-24 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8">
-          Blogs
+      <section className="max-w-6xl mx-auto mb-20 text-center">
+        <h1 className="text-5xl md:text-7xl font-semibold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8 tracking-tight">
+        Blogs
         </h1>
         <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto">
-          Latest articles and showcase of our recent work
+          Latest articles and Blogs
         </p>
       </section>
 
+<section className="max-w-7xl mx-auto">
+  <div
+    className="relative w-full h-96 bg-[url('https://www.baltana.com/files/wallpapers-5/Black-And-White-Background-Nice-Wallpaper-16258.jpg')]
+    bg-cover bg-center bg-no-repeat overflow-hidden"
+  >
+     <span className=" absolute w-max bg-slate-900/90 px-2 py-1 rounded-xl text-sm backdrop-blur-sm mt-5 text-white">
+        Category
+      </span>
+  
+    <div className="absolute inset-0 bg-black/50"></div>
+
+  
+    <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white">
+      <h3 className="text-2xl font-semibold  line-clamp-2 tracking-tight">
+        Title
+      </h3>
+
+     
+
+      <div className="text-sm text-slate-300 mb-1 px-1">
+        Date
+      </div>
+
+      
+
+    </div>
+
+  </div>
+</section>
+
    
-      <section className="max-w-10xl mx-auto mb-24 overflow-hidden">
-        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-20">
+      <section className="max-w-10xl mx-auto mb-24 overflow-hidden mt-5">
+        <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 text-center mb-20 tracking-tight">
           Recent Blogs
         </h2>
 
